@@ -159,4 +159,52 @@
                     </div>
                     <div class="grid-item">
                         <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/month.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main
+                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/month.jpg" alt="Lucio del Rey month Rrs">
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/year.jpg" target="_blank">
+                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/year.jpg" alt="Lucio del Rey year Rrs">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab" id="tab4">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/today.jpg" target="_blank">
+                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/today.jpg" alt="Hondon del Burro today Rrs">
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/month.jpg" target="_blank">
+                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/month.jpg" alt="Hondon del Burro month Rrs">
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/year.jpg" target="_blank">
+                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/year.jpg" alt="Hondon del Burro year Rrs">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeTab(tabIndex) {
+            const tabs = document.querySelectorAll('.tab');
+            const tabLabels = document.querySelectorAll('.tab-label');
+            
+            tabs.forEach(tab => tab.style.display = 'none');
+            tabLabels.forEach(label => label.classList.remove('active-tab'));
+            
+            tabs[tabIndex].style.display = 'block';
+            tabLabels[tabIndex].classList.add('active-tab');
+        }
+        
+        // Mostrar la primera pestaña por defecto al cargar la página
+        changeTab(0);
+    </script>
+</body>
+</html>
