@@ -60,9 +60,9 @@
             border-radius: 5px 5px 0 0;
         }
         .active-sub-tab {
-            background: blue;
-            color: white;
-            border-color: blue;
+            background-color: blue; /* Color de fondo azul */
+            color: white;           /* Color del texto blanco */
+            border: 2px solid darkblue; /* Borde azul más oscuro */
         }
         .grid-container {
             display: grid;
@@ -251,9 +251,11 @@
         function changeSubTab(section, subIndex) {
             const subTabs = document.querySelectorAll(`#tab${section.charAt(1)} .sub-tab-content`);
             const subTabLabels = document.querySelectorAll(`#tab${section.charAt(1)} .sub-tab`);
-
+        
             subTabs.forEach((subTab, index) => {
+                // Activar o desactivar la sub-pestaña
                 subTab.classList.toggle('active', index === getSubIndex(subIndex));
+                // Cambiar clase de la sub-pestaña
                 subTabLabels[index].classList.toggle('active-sub-tab', index === getSubIndex(subIndex));
             });
         }
