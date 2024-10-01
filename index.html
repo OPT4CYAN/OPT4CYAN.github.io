@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,36 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000000; /* Color de fondo a negro */
-            color: #8a9597; /* Color del texto a gris */
+            background-color: #000;
+            color: #8a9597;
         }
+
         .tab-container {
             width: 100%;
         }
+
         .tab {
             display: none;
         }
+
         .tab-label {
-            font-size: 18px; /* Tamaño de letra */
-            font-weight: bold; /* Negrita */
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
             flex: 1;
             padding: 20px 30px;
             text-align: center;
-            background-color: black; /* Color de fondo */
-            color: #8a9597; /* Color del texto */
-            border: 1px solid #8a9597; /* Borde gris */
+            background-color: black;
+            color: #8a9597;
+            border: 1px solid #8a9597;
         }
+
         .small-text {
-            font-size: 12px; /* Tamaño de la fuente */
-            font-style: italic; /* Texto en cursiva */
-            color: #8a9597; /* Color del texto más claro */
-        } 
+            font-size: 12px;
+            font-style: italic;
+            color: #8a9597;
+        }
+
         .tab-labels {
             display: flex;
             justify-content: space-between;
@@ -40,53 +46,53 @@
             border-radius: 5px;
             margin-bottom: 5px;
         }
-        .grid-item-home {
+
+        .grid-item-home,
+        .grid-item {
             text-align: center;
-            display: flex; /* Flexbox para centrar contenido */
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .grid-item-home img {
-            max-width: 100%; /* Ajusta el tamaño máximo de las imágenes */
+
+        .grid-item-home img,
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
         }
-        .grid-item-home:hover {
-            transform: scale(1.1); /* Ampliación al pasar el cursor */
+
+        .grid-item-home:hover,
+        .grid-item:hover {
+            transform: scale(1.1);
         }
-        .grid-container-2x1, .grid-container {
+
+        .grid-container-2x1 {
             display: grid;
             gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
         }
-        .grid-container-2x1 {
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-        }
+
         .grid-container {
-            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
         }
+
         .grid-item {
             border: 1px solid #ccc;
             padding: 10px;
-            text-align: center;
-            display: flex; /* Flexbox para centrar contenido */
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente */
         }
-        .grid-item:hover {
-            transform: scale(1.1); /* Ampliación al pasar el cursor */
-        }
-        .grid-item img {
-            max-width: 100%; /* Ajusta el tamaño máximo de las imágenes */
-            height: auto; /* Mantén la proporción de aspecto */
-        }
+
         .active-tab {
-            background-color: #000000;
+            background-color: #000;
             border: 5px solid #00A9FF;
-            color: #00A9FF; /* Color del texto para la pestaña activa */
+            color: #00A9FF;
             border-radius: 3px;
         }
     </style>
 </head>
+
 <body>
-    <!-- Contenedor de pestañas -->
     <div class="tab-container">
         <div class="tab-labels">
             <div class="tab-label" onclick="changeTab(0)">Home Page</div>
@@ -95,6 +101,7 @@
             <div class="tab-label" onclick="changeTab(3)">S3 <span class="small-text">Hondon del Burro</span></div>
             <div class="tab-label" onclick="changeTab(4)">S4 <span class="small-text">Fuente Duque</span></div>
         </div>
+
         <div class="tab-content">
             <div class="tab" id="tab0">
                 <div class="grid-container-2x1">
@@ -112,6 +119,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="tab" id="tab1">
                 <div class="grid-container">
                     <div class="grid-item">
@@ -131,6 +139,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="tab" id="tab2">
                 <div class="grid-container">
                     <div class="grid-item">
@@ -150,6 +159,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="tab" id="tab3">
                 <div class="grid-container">
                     <div class="grid-item">
@@ -169,6 +179,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="tab" id="tab4">
                 <div class="grid-container">
                     <div class="grid-item">
@@ -195,16 +206,17 @@
         function changeTab(tabIndex) {
             const tabs = document.querySelectorAll('.tab');
             const tabLabels = document.querySelectorAll('.tab-label');
-            
+
             tabs.forEach(tab => tab.style.display = 'none');
             tabLabels.forEach(label => label.classList.remove('active-tab'));
-            
+
             tabs[tabIndex].style.display = 'block';
             tabLabels[tabIndex].classList.add('active-tab');
         }
-        
+
         // Mostrar la primera pestaña por defecto al cargar la página
         changeTab(0);
     </script>
 </body>
+
 </html>
