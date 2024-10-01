@@ -65,34 +65,34 @@
         .grid-container-2x1 {
             display: grid;
             gap: 20px;
-            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            grid-template-columns: repeat(2, 1fr);
             width: 100%;
-            max-width: 1200px; /* Limita el tamaño máximo del contenedor */
-            margin: 0 auto; /* Centra el contenedor */
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
+
         .grid-item-home img {
-            width: 100%; /* Asegura que las imágenes ocupen todo el espacio */
-            height: auto; /* Mantén la proporción de las imágenes */
-            border-radius: 10px; /* Opcional: añade bordes redondeados a las imágenes */
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
-        
+
         /* Estilos para el logo */
         .logo-container {
-            text-align: center; /* Centra el logo */
+            text-align: center;
             margin-top: 20px;
         }
-        
+
         .logo {
-            max-width: 500px; /* Limita el tamaño del logo */
-            width: 100%; /* El logo se ajusta al tamaño disponible */
-            height: auto; /* Mantén la proporción de aspecto */
+            max-width: 500px;
+            width: 100%;
+            height: auto;
         }
 
         .grid-container {
             display: grid;
             gap: 20px;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
 
         .grid-item {
@@ -105,6 +105,36 @@
             border: 5px solid #00A9FF;
             color: #00A9FF;
             border-radius: 3px;
+        }
+
+        .sub-tab-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .sub-tab {
+            cursor: pointer;
+            padding: 10px;
+            background-color: black;
+            color: #8a9597;
+            border: 1px solid #8a9597;
+            flex: 1;
+            text-align: center;
+            margin-right: 5px;
+        }
+
+        .sub-tab.active {
+            background-color: #00A9FF;
+            color: #000;
+        }
+
+        .sub-tab-content {
+            display: none;
+        }
+
+        .sub-tab-content.active {
+            display: block;
         }
     </style>
 </head>
@@ -135,89 +165,96 @@
                         <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Alert/Fuente_duque.png" alt="Fuente duque Alert">
                     </div>
                 </div>
-                <!-- Sección del logo -->
                 <div class="logo-container">
                     <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Alert/logos.jpg" alt="Logo" class="logo">
                 </div>
             </div>
-            
+
+            <!-- Tab S1 (Santa Olalla) -->
             <div class="tab" id="tab1">
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/today.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/today.jpg" alt="Santa Olalla today Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/month.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/month.jpg" alt="Santa Olalla month Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/year.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/year.jpg" alt="Santa Olalla year Rrs">
-                        </a>
-                    </div>
+                <div class="sub-tab-container">
+                    <div class="sub-tab" onclick="changeSubTab('S1', 'today')">Today</div>
+                    <div class="sub-tab" onclick="changeSubTab('S1', 'month')">Month</div>
+                    <div class="sub-tab" onclick="changeSubTab('S1', 'year')">Year</div>
+                    <div class="sub-tab" onclick="changeSubTab('S1', 'all')">All Data</div>
+                </div>
+                <div id="S1-today" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/today.jpg" alt="Santa Olalla Today Rrs">
+                </div>
+                <div id="S1-month" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/month.jpg" alt="Santa Olalla Month Rrs">
+                </div>
+                <div id="S1-year" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/year.jpg" alt="Santa Olalla Year Rrs">
+                </div>
+                <div id="S1-all" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Santa_Olalla/Rrs/all_data.jpg" alt="Santa Olalla All Data Rrs">
                 </div>
             </div>
 
+            <!-- Tab S2 (Lucio del Rey) -->
             <div class="tab" id="tab2">
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/today.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/today.jpg" alt="Fuente Duque today Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/month.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/month.jpg" alt="Fuente Duque month Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/year.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/year.jpg" alt="Fuente Duque year Rrs">
-                        </a>
-                    </div>
+                <div class="sub-tab-container">
+                    <div class="sub-tab" onclick="changeSubTab('S2', 'today')">Today</div>
+                    <div class="sub-tab" onclick="changeSubTab('S2', 'month')">Month</div>
+                    <div class="sub-tab" onclick="changeSubTab('S2', 'year')">Year</div>
+                    <div class="sub-tab" onclick="changeSubTab('S2', 'all')">All Data</div>
+                </div>
+                <div id="S2-today" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/today.jpg" alt="Lucio del Rey Today Rrs">
+                </div>
+                <div id="S2-month" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/month.jpg" alt="Lucio del Rey Month Rrs">
+                </div>
+                <div id="S2-year" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/year.jpg" alt="Lucio del Rey Year Rrs">
+                </div>
+                <div id="S2-all" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/all_data.jpg" alt="Lucio del Rey All Data Rrs">
                 </div>
             </div>
 
+            <!-- Tab S3 (Hondon del Burro) -->
             <div class="tab" id="tab3">
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/today.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/today.jpg" alt="Lucio del Rey today Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/month.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/month.jpg" alt="Lucio del Rey month Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/year.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Lucio_del_Rey/Rrs/year.jpg" alt="Lucio del Rey year Rrs">
-                        </a>
-                    </div>
+                <div class="sub-tab-container">
+                    <div class="sub-tab" onclick="changeSubTab('S3', 'today')">Today</div>
+                    <div class="sub-tab" onclick="changeSubTab('S3', 'month')">Month</div>
+                    <div class="sub-tab" onclick="changeSubTab('S3', 'year')">Year</div>
+                    <div class="sub-tab" onclick="changeSubTab('S3', 'all')">All Data</div>
+                </div>
+                <div id="S3-today" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/today.jpg" alt="Hondon del Burro Today Rrs">
+                </div>
+                <div id="S3-month" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/month.jpg" alt="Hondon del Burro Month Rrs">
+                </div>
+                <div id="S3-year" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/year.jpg" alt="Hondon del Burro Year Rrs">
+                </div>
+                <div id="S3-all" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/all_data.jpg" alt="Hondon del Burro All Data Rrs">
                 </div>
             </div>
 
+            <!-- Tab S4 (Fuente Duque) -->
             <div class="tab" id="tab4">
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/today.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/today.jpg" alt="Hondon del Burro today Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/month.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/month.jpg" alt="Hondon del Burro month Rrs">
-                        </a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/year.jpg" target="_blank">
-                            <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Hondon_del_Burro/Rrs/year.jpg" alt="Hondon del Burro year Rrs">
-                        </a>
-                    </div>
+                <div class="sub-tab-container">
+                    <div class="sub-tab" onclick="changeSubTab('S4', 'today')">Today</div>
+                    <div class="sub-tab" onclick="changeSubTab('S4', 'month')">Month</div>
+                    <div class="sub-tab" onclick="changeSubTab('S4', 'year')">Year</div>
+                    <div class="sub-tab" onclick="changeSubTab('S4', 'all')">All Data</div>
+                </div>
+                <div id="S4-today" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/today.jpg" alt="Fuente Duque Today Rrs">
+                </div>
+                <div id="S4-month" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/month.jpg" alt="Fuente Duque Month Rrs">
+                </div>
+                <div id="S4-year" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/year.jpg" alt="Fuente Duque Year Rrs">
+                </div>
+                <div id="S4-all" class="sub-tab-content">
+                    <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Fuente_Duque/Rrs/all_data.jpg" alt="Fuente Duque All Data Rrs">
                 </div>
             </div>
         </div>
@@ -235,12 +272,22 @@
             tabLabels[tabIndex].classList.add('active-tab');
         }
 
-        // Mostrar la primera pestaña por defecto al cargar la página
+        function changeSubTab(section, subTab) {
+            const subTabs = document.querySelectorAll(`#${section}-today, #${section}-month, #${section}-year, #${section}-all`);
+            const activeSubTab = document.querySelector(`#${section}-${subTab}`);
+
+            subTabs.forEach(subTabContent => subTabContent.classList.remove('active'));
+            activeSubTab.classList.add('active');
+
+            const subTabLabels = document.querySelectorAll(`#${section} .sub-tab`);
+            subTabLabels.forEach(label => label.classList.remove('active'));
+            document.querySelector(`#${section} .sub-tab[onclick="changeSubTab('${section}', '${subTab}')"]`).classList.add('active');
+        }
+
+        // Mostrar la primera pestaña por defecto
         changeTab(0);
+        changeSubTab('S1', 'today');
     </script>
 </body>
 
 </html>
-
-</html>
-
