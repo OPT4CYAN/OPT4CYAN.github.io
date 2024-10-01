@@ -61,10 +61,32 @@
             height: auto;
         }
 
+        /* Ajustes para la grid de la Home Page */
         .grid-container-2x1 {
             display: grid;
             gap: 20px;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            width: 100%;
+            max-width: 1200px; /* Limita el tamaño máximo del contenedor */
+            margin: 0 auto; /* Centra el contenedor */
+        }
+        
+        .grid-item-home img {
+            width: 100%; /* Asegura que las imágenes ocupen todo el espacio */
+            height: auto; /* Mantén la proporción de las imágenes */
+            border-radius: 10px; /* Opcional: añade bordes redondeados a las imágenes */
+        }
+        
+        /* Estilos para el logo */
+        .logo-container {
+            text-align: center; /* Centra el logo */
+            margin-top: 20px;
+        }
+        
+        .logo {
+            max-width: 300px; /* Limita el tamaño del logo */
+            width: 100%; /* El logo se ajusta al tamaño disponible */
+            height: auto; /* Mantén la proporción de aspecto */
         }
 
         .grid-container {
@@ -113,8 +135,12 @@
                         <img src="https://raw.githubusercontent.com/OPT4CYANproject/OPT4CYAN_Control/main/Plots/Alert/Fuente_duque.png" alt="Fuente duque Alert">
                     </div>
                 </div>
+                <!-- Sección del logo -->
+                <div class="logo-container">
+                    <img src="ruta/del/logo.png" alt="Logo" class="logo">
+                </div>
             </div>
-
+            
             <div class="tab" id="tab1">
                 <div class="grid-container">
                     <div class="grid-item">
