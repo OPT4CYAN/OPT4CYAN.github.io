@@ -143,6 +143,20 @@
             height: auto; /* Mantiene la relación de aspecto */
             border-radius: 5px; /* Bordes redondeados para las imágenes */
         }
+        .image-title {
+            position: absolute; /* Permite posicionar el título encima de la imagen */
+            top: 10px; /* Ajusta la distancia desde la parte superior */
+            left: 50%; /* Centra el título horizontalmente */
+            transform: translateX(-50%); /* Corrige el desplazamiento para centrar */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+            color: white; /* Color del texto */
+            padding: 5px 10px; /* Espaciado interno */
+            font-size: 16px; /* Tamaño de fuente */
+            font-weight: bold; /* Estilo de fuente */
+            border-radius: 5px; /* Bordes redondeados */
+            text-align: center; /* Centra el texto */
+            z-index: 10; /* Asegura que el título esté por encima de la imagen */
+        }
     </style>
 </head>
 
@@ -189,7 +203,7 @@
                     <div class="grid-container">
                         <a href="https://raw.githubusercontent.com/OPT4CYAN/Data-upload/main/Santa_Olalla/today.jpg" target="_blank">
                             <img src="https://raw.githubusercontent.com/OPT4CYAN/Data-upload/main/Santa_Olalla/today.jpg" alt="Rrs_today">
-                            <div class="image-title">Título: Rrs Today</div>
+                            <div class="image-title"> Rrs Today</div>
                         </a>
                         <a href="https://raw.githubusercontent.com/OPT4CYAN/Data-upload/main/Santa_Olalla/chlpcu_7d.jpg" target="_blank">
                             <img src="https://raw.githubusercontent.com/OPT4CYAN/Data-upload/main/Santa_Olalla/chlpcu_7d.jpg" alt="chl and pcu -7 days">
