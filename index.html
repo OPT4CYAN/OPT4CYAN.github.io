@@ -156,10 +156,77 @@
             text-align: center; /* Centra el texto */
             z-index: 10; /* Asegura que el título esté por encima de la imagen */
         }
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 9999;
+            }
+            
+            
+            /* Popup box */
+            .popup {
+            background: #ffecec;
+            border: 3px solid rgba(198,40,40,0.25);
+            padding: 26px 30px;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            position: relative;
+            }
+            
+            
+            .popup h1 {
+            margin: 0 0 14px 0;
+            color: #c62828;
+            font-size: 36px;
+            font-weight: 800;
+            }
+            
+            
+            .popup p {
+            margin: 0 0 18px 0;
+            font-size: 18px;
+            color: #222;
+            }
+            
+            
+            /* Close button */
+            .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #c62828;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            font-size: 14px;
+            padding: 6px 10px;
+            cursor: pointer;
+            }
+            
+            
+            .close-btn:hover {
+            background: #a71f1f;
+            }
     </style>
 </head>
 
 <body>
+    <!-- OVERLAY POPUP -->
+    <div class="overlay" id="notice-popup">
+        <div class="popup">
+            <button class="close-btn" onclick="closePopup()">X</button>
+            <h1>Attention</h1>
+            <p>This page is outdated. We are working on developing a much more sophisticated page within the Doñana Biological Area's web platform. The link will be added here as soon as it is ready.</p>
+        </div>
+    </div>
     <div class="tab-container">
         <div class="tab-labels">
             <div class="tab-label" onclick="changeTab(0)">Home Page</div>
@@ -688,6 +755,9 @@
     </div>
 
     <script>
+        function closePopup() {
+            document.getElementById('notice-popup').style.display = 'none';
+        }
         function changeTab(index) {
             const tabs = document.querySelectorAll('.tab');
             const tabLabels = document.querySelectorAll('.tab-label');
